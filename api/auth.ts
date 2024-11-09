@@ -1,6 +1,6 @@
 import type { VercelRequest, VercelResponse } from '@vercel/node';
 
-import { createToken, verifyPassword } from '../lib/util/auth';
+import { createToken, verifyPassword } from '../lib/util/auth.js'; // it will be js after compilation
 
 export default async function auth(req: VercelRequest, res: VercelResponse) {
     if (req.method !== "POST") return;
