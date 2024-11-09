@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { ApiService } from './api/api.service';
 
 @Component({
   selector: 'app-root',
@@ -8,6 +9,14 @@ import { RouterOutlet } from '@angular/router';
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   title = 'spending-tracker';
+
+  constructor(private apiService: ApiService) {}
+
+  ngOnInit(): void {
+    this.apiService.getTestMessage().subscribe(data => {
+      console.log(data);
+    });
+  }
 }
