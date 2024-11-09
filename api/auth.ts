@@ -12,7 +12,7 @@ export default async function auth(req: VercelRequest, res: VercelResponse) {
         return;
     }
 
-    const token = createToken();
+    const token = await createToken();
 
     if (token) {
         res.status(200).json({ message: "Authorized", token: token });
