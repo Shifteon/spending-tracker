@@ -18,5 +18,9 @@ export class AppComponent implements OnInit {
     this.apiService.getTestMessage().subscribe(data => {
       console.log(data);
     });
+    
+    this.apiService.testAuth().subscribe(data => {
+      console.log("Auth Data: ", data);
+    });
   }
 }

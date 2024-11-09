@@ -11,4 +11,11 @@ export class ApiService {
   getTestMessage() {
     return this.http.get('/api/test');
   }
+
+  testAuth() {
+    const body = {
+        "password": "testPassword"
+    };
+    return this.http.post('/api/auth', body);
+  }
 }
